@@ -200,7 +200,7 @@ pub fn log_internal(verbosity: Verbosity, scope_id: u32, file: &str, line_and_co
 #[macro_export(local_inner_macros)]
 macro_rules! log_macro_internal {
     ($verbosity:ident, $scope:ident, $fmtstr:literal$(, $param:expr)*) => {
-        lumberjack::log_internal(::lumberjack::Verbosity::$verbosity, *crate::lumberjack_scopes::$scope, std::file!(), (std::line!(), std::column!()), std::format!($fmtstr$(, $param)*));
+        hemlock::log_internal(::hemlock::Verbosity::$verbosity, *crate::hemlock_scopes::$scope, std::file!(), (std::line!(), std::column!()), std::format!($fmtstr$(, $param)*));
     }
 }
 #[macro_export]
